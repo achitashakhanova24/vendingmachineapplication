@@ -5,7 +5,9 @@ package com.techelevator.PurchaseOptions;
 // print out item name/message, updates balance in machine (feed money),
 // BOGODO sale (second item purchased/very item (%2==0) is $1 off)
 // print out not enough money if over amount in machine (total >feed money),
-// have two selections for userinput (A/C), a lead to feed money, c lead to finish transaction
+// return to main menu (Finish transaction inside the select item)
 
-public class selectItem {
+public class ItemManager {
+//new itemmanager() pass in new item
+    //item manager is the one who has control of items and what will be displayed and such
 }

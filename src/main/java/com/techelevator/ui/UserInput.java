@@ -1,6 +1,9 @@
 package com.techelevator.ui;
 
-import java.math.BigDecimal;
+import com.techelevator.PurchaseOptions.ItemManager;
+import com.techelevator.PurchaseOptions.moneyManager;
+import com.techelevator.application.MainMenu;
+
 import java.util.Scanner;
 
 /**
@@ -29,17 +32,54 @@ public class UserInput
 
         if (option.equals("d"))
         {
-            return "display";
+            MainMenu.DISPLAY;
         }
         else if (option.equals("p"))
         {
-            return "purchase";
+            MainMenu.PURCHASES;
         }
         else if (option.equals("e"))
         {
-            return "exit";
+             MainMenu.EXIT;
         }
 
         return "";
+    }
+
+    public static String getPurchaseMenuOption(){
+        System.out.println("What would you like to do?");
+        System.out.println();
+
+        System.out.println("M) Feed Money ");
+        System.out.println("S) Select item ");
+        System.out.println("F) Finish transaction ");
+
+        System.out.println();
+        System.out.print("Please select an option: ");
+
+        String selectedOption = scanner.nextLine();
+        String option = selectedOption.trim().toLowerCase();
+
+        if (option.equals("M"))
+        {
+            System.out.println("Please enter an amount ");
+            String optionPicked = scanner.nextLine();
+            String feedMoneyOption = optionPicked.trim().toLowerCase();
+            double amount = Double. parseDouble(feedMoneyOption) ;
+            new moneyManager(amount);
+        }
+
+
+        else if (option.equals("S"))
+        {
+            ItemManager;
+        }
+
+        return "";
+
+    }
+
+
+    public static int getMenuOptions() {
     }
 }

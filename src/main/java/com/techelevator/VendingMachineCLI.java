@@ -1,13 +1,13 @@
 package com.techelevator;
 
-import com.techelevator.application.VendingMachine;
+import com.techelevator.application.MainMenu;
 
 public class VendingMachineCLI 
 {
     public static void main(String[] args) 
     {
-        VendingMachine vendingMachine = new VendingMachine();
-        vendingMachine.run();
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.run();
     }
     
 }

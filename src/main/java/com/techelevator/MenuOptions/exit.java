@@ -1,2 +1,6 @@
-package com.techelevator.MenuOptions;public class exit {
+package com.techelevator.MenuOptions;
+
+//TODO: display goodbye, return to main menu
+
+public class exit {
 }

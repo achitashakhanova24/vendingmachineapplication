@@ -9,13 +9,8 @@ public class Item {
         private int quantity = 6;
         private String slotNumber;
         private String type;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> main
-
-        public void Item(String name, BigDecimal price, String slotNumber, String type) {
+        public Item(String name, BigDecimal price, String slotNumber, String type) {
             this.name = name;
 
             this.price = price;
@@ -25,24 +20,14 @@ public class Item {
             this.type = type;
         }
 
-<<<<<<< HEAD
-    public String getType() {
-        return type;
-    }
 
-    public String getSlotNumber() {
-        return slotNumber;
-    }
 
-    public String getName() {
-            return name;
-=======
-        public void Item(String name, BigDecimal price, int quantity, String slotNumber, String type) {
+        public Item(String name, BigDecimal price, int quantity, String slotNumber, String type) {
             this.name = name;
             this.price = price;
             this.slotNumber = slotNumber;
             this.type = type;
->>>>>>> main
+
         }
 
 
@@ -85,10 +70,8 @@ public class Item {
     public void setType(String type) {
         this.type = type;
     }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> main
+
 }
 

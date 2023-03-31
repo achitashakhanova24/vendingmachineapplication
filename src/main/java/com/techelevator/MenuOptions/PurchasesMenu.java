@@ -18,22 +18,22 @@ public class PurchasesMenu {
 
     int purchaseState = PURCHASE_MENU;
 
-    {
-        while (purchaseState != EXIT) {
-
-            if (purchaseState == PURCHASE_MENU) {
-
-                UserOutput.displayPurchaseMenu();
-                purchaseState = UserInput.getMenuOptions();
-
-            } else if (purchaseState == MONEY_MANAGER) {
-
-
-            }
-
-        } else if (purchaseState == ITEM_MANAGER) {
-
-
-    }
-    }
+//    {
+//        while (purchaseState != EXIT) {
+//
+//            if (purchaseState == PURCHASE_MENU) {
+//
+//                UserOutput.displayPurchaseMenu();
+//                purchaseState = UserInput.getMenuOptions();
+//
+//            } else if (purchaseState == MONEY_MANAGER) {
+//
+//
+//            }
+//
+//        } else if (purchaseState == ITEM_MANAGER) {
+//
+//
+//    }
+//    }
 }

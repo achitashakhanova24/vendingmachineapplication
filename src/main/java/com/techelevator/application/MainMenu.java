@@ -4,6 +4,8 @@ import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 import jdk.tools.jmod.Main;
 
+import static com.techelevator.ui.UserOutput.exit;
+
 
 public class MainMenu {
     public static final int MAIN_MENU = 0;
@@ -24,17 +26,25 @@ public class MainMenu {
 
                 } else if (MainMenuState == VENDING_ITEMS) {
 
+                    while (MainMenuState != EXIT) {
 
+                        if (MainMenuState == MAIN_MENU) {
+
+                            UserOutput.displayMainMenu();
+                            UserInput.getHomeScreenOption();
+
+                        } else if (MainMenuState == VENDING_ITEMS) {
+
+
+                        } else if (MainMenuState == PURCHASES_MENU) {
+
+
+                        }
+                    }
+
+                    exit();
                 }
-
-
-                } else if (MainMenuState == PURCHASES_MENU) {
-
-
             }
-        }
-        public void exit () {
-            UserOutput.exit();
         }
     }
 }

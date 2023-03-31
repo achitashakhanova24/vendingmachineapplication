@@ -1,7 +1,7 @@
 package com.techelevator.ui;
 
 import com.techelevator.PurchaseOptions.ItemManager;
-import com.techelevator.PurchaseOptions.moneyManager;
+import com.techelevator.PurchaseOptions.MoneyManager;
 import com.techelevator.application.MainMenu;
 
 import java.math.BigDecimal;
@@ -33,15 +33,10 @@ public class UserInput
 
         if (option.equals("d"))
         {
-            MainMenu.VENDING_ITEMS;
-        }
-        else if (option.equals("p"))
-        {
-            MainMenu.PURCHASES_MENU;
         }
         else if (option.equals("e"))
         {
-             MainMenu.EXIT;
+        //     MainMenu.EXIT;
         }
 
         return "";
@@ -65,13 +60,15 @@ public class UserInput
             String optionPicked = scanner.nextLine();
             String feedMoneyOption = optionPicked.trim().toLowerCase();
             BigDecimal amount = new BigDecimal(feedMoneyOption) ;
-            new moneyManager(amount);
+           // new MoneyManager(amount);
+         //   double amount = Double. parseDouble(feedMoneyOption) ;//replace to BigDecimal
+         //   new MoneyManager(amount);
         }
 
 
         else if (option.equals("S"))
         {
-            ItemManager;
+
         }
 
         return "";
@@ -80,25 +77,27 @@ public class UserInput
 
 
     public static int getMenuOptions() {
+        return 0;
     }
 
-    public static String messageForItem
+    public static String messageForItem()
 
     {
-        if (type.equals("Munchy")) {
-            System.out.println( "Munchy, Munchy, so Good!");
-        }
-        if (type.equals("Candy")) {
-            System.out.println("Sugar, Sugar, so Sweet!");
-        }
-        if (type.equals("Candy")) {
-            System.out.println("Sugar, Sugar, so Sweet!");
-        }
-        if(type.equals("Drink")){
-            System.out.println("Drinky, Drinky, Slurp Slurp!");
-        }
-        if(type.equals("Gum")){
-            System.out.println("Chewy, Chewy, Lots O Bubbles!);
-        }
+//        if (type.equals("Munchy")) {
+//            System.out.println( "Munchy, Munchy, so Good!");
+//        }
+//        if (type.equals("Candy")) {
+//            System.out.println("Sugar, Sugar, so Sweet!");
+//        }
+//        if (type.equals("Candy")) {
+//            System.out.println("Sugar, Sugar, so Sweet!");
+//        }
+//        if(type.equals("Drink")){
+//            System.out.println("Drinky, Drinky, Slurp Slurp!");
+//        }
+//        if(type.equals("Gum")){
+//            System.out.println("Chewy, Chewy, Lots O Bubbles!);
+//        }
+        return "";
     }
 }

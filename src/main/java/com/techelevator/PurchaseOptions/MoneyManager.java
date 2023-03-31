@@ -1,9 +1,8 @@
 package com.techelevator.PurchaseOptions;
 
- //TODO:make change/return money (in singles and coins)
-
 
 import java.math.BigDecimal;
+
 
 public class MoneyManager {
     private BigDecimal amount;
@@ -53,5 +52,3 @@ public class MoneyManager {
     }
 
 }
-
-

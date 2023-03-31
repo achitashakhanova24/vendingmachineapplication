@@ -3,24 +3,46 @@ package com.techelevator.PurchaseOptions;
 import java.math.BigDecimal;
 
 public class Item {
-    public class ItemManager {
+
         private String name;
         private BigDecimal price;
         private int quantity = 6;
         private String slotNumber;
         private String type;
+<<<<<<< HEAD
 
-        public void Item(String name, BigDecimal price) {
+
+=======
+>>>>>>> main
+
+        public void Item(String name, BigDecimal price, String slotNumber, String type) {
             this.name = name;
 
             this.price = price;
+
+            this.slotNumber = slotNumber;
+
+            this.type = type;
         }
 
+<<<<<<< HEAD
+    public String getType() {
+        return type;
+    }
+
+    public String getSlotNumber() {
+        return slotNumber;
+    }
+
+    public String getName() {
+            return name;
+=======
         public void Item(String name, BigDecimal price, int quantity, String slotNumber, String type) {
             this.name = name;
             this.price = price;
             this.slotNumber = slotNumber;
             this.type = type;
+>>>>>>> main
         }
 
 
@@ -55,6 +77,18 @@ public class Item {
 
             this.quantity = quantity;
         }
+
+    public void setSlotNumber(String slotNumber) {
+        this.slotNumber = slotNumber;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> main
 }
 

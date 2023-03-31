@@ -1,7 +1,9 @@
 package com.techelevator.MenuOptions;
 
-//TODO: scan file,(test file against items in stock??) list items/prices/stock,
-// slot with 6 capacity, add/display out of stock message
+//TODO: inventory of items, loads initial stock (6), updates quantity as sold, method to list items and details
+
+import java.io.File;
+import java.util.Scanner;
 
 import java.math.BigDecimal;
 
@@ -14,6 +16,14 @@ import java.math.BigDecimal;
  -display item manager read the csv
   */
 public class VendingItems {
+
+//List<VendingItems>items;
+//
+//display();
+//private chips, munchies, soda,gum
+//this will display item manager
+
+
     private String items;
     private BigDecimal amount;
     private int slot;

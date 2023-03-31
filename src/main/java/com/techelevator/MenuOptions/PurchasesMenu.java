@@ -3,29 +3,37 @@ package com.techelevator.MenuOptions;
 //TODO: make menu that leads user to three options, accept user input for the options
 // scanner(reader and writer(?)) for audit.txt
 
+import com.techelevator.PurchaseOptions.Item;
+import com.techelevator.PurchaseOptions.ItemManager;
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
-public class PurchasesMenu {
-    {
-        while(true)
-        {
-            UserOutput.displayHomeScreen();
-            String choice = UserInput.getHomeScreenOption();
+import static com.techelevator.application.MainMenu.EXIT;
+import static jdk.internal.org.jline.keymap.KeyMap.display;
 
-            if(choice.equals("FeedMoney"))
-            {
-                // display the vending machine slots
+public class PurchasesMenu {
+        public static final int PURCHASE_MENU= 0;
+        public static final int  MONEY_MANAGER= 1;
+        public static final int ITEM_MANAGER = 2;
+
+    int purchaseState = PURCHASE_MENU;
+
+    {
+        while (purchaseState != EXIT) {
+
+            if (purchaseState == PURCHASE_MENU) {
+
+                UserOutput.displayPurchaseMenu();
+                purchaseState = UserInput.getMenuOptions();
+
+            } else if (purchaseState == MONEY_MANAGER) {
+
+
             }
-            else if(choice.equals("SelectItem"))
-            {
-                // make a purchase
-            }
-            else if(choice.equals("FinishTransaction"))
-            {
-                // good bye
-                break;
-            }
-        }
+
+        } else if (purchaseState == ITEM_MANAGER) {
+
+
+    }
     }
 }

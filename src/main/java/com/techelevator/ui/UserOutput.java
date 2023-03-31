@@ -36,7 +36,8 @@ public static void FeedMoney(){
         System.out.println("Good Bye!");
     }
 
-    public static void displayVendingMachine() {
-        displayHomeScreen();
+
+
+    public static void displayMainMenu() {
     }
 }

@@ -7,10 +7,8 @@ public class Item {
         private String name;
         private BigDecimal price;
         private int quantity = 6;
-        //type
-        //slot number
-
-
+        private String slotNumber;
+        private String type;
 
         public void Item(String name, BigDecimal price) {
             this.name = name;
@@ -18,29 +16,45 @@ public class Item {
             this.price = price;
         }
 
+        public void Item(String name, BigDecimal price, int quantity, String slotNumber, String type) {
+            this.name = name;
+            this.price = price;
+            this.slotNumber = slotNumber;
+            this.type = type;
+        }
+
+
         public String getName() {
+
             return name;
         }
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
         public BigDecimal getPrice() {
+
             return price;
         }
 
-        public void setPrice(BigDecimal price) {
-            this.price = price;
+        public String getSlotNumber() {
+
+            return slotNumber;
         }
 
+
+        public String getType() {
+
+            return type;
+        }
+
+
         public int getQuantity() {
+
             return quantity;
         }
 
         public void setQuantity(int quantity) {
+
             this.quantity = quantity;
         }
     }
-
 }
+

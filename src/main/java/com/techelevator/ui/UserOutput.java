@@ -29,13 +29,14 @@ public class UserOutput
         System.out.println();
     }
 public static void FeedMoney(){
-        System.out.println("Current total in machine is : ") + amount;
+       // System.out.println("Current total in machine is : ") + amount;
     }
 
-    public static void Exit(){
+    public static void exit(){
         System.out.println("Good Bye!");
     }
 
     public static void displayVendingMachine() {
+        displayHomeScreen();
     }
 }

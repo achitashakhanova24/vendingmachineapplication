@@ -1,7 +1,7 @@
 package com.techelevator.ui;
 
 import com.techelevator.PurchaseOptions.ItemManager;
-import com.techelevator.PurchaseOptions.moneyManager;
+import com.techelevator.PurchaseOptions.MoneyManager;
 import com.techelevator.application.MainMenu;
 
 import java.util.Scanner;
@@ -32,15 +32,15 @@ public class UserInput
 
         if (option.equals("d"))
         {
-            MainMenu.DISPLAY;
+          //  MainMenu.DISPLAY;
         }
         else if (option.equals("p"))
         {
-            MainMenu.PURCHASES;
+          //  MainMenu.PURCHASES;
         }
         else if (option.equals("e"))
         {
-             MainMenu.EXIT;
+        //     MainMenu.EXIT;
         }
 
         return "";
@@ -65,14 +65,14 @@ public class UserInput
             System.out.println("Please enter an amount ");
             String optionPicked = scanner.nextLine();
             String feedMoneyOption = optionPicked.trim().toLowerCase();
-            double amount = Double. parseDouble(feedMoneyOption) ;
-            new moneyManager(amount);
+            double amount = Double. parseDouble(feedMoneyOption) ;//replace to BigDecimal
+         //   new MoneyManager(amount);
         }
 
 
         else if (option.equals("S"))
         {
-            ItemManager;
+
         }
 
         return "";
@@ -81,5 +81,6 @@ public class UserInput
 
 
     public static int getMenuOptions() {
+        return 0;
     }
 }

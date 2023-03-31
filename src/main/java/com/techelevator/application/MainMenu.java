@@ -13,25 +13,27 @@ public class MainMenu {
     public void run() {
         int vendingMachineState = MAIN_MENU;
 
-        {
-            while (vendingMachineState != EXIT) {
 
-                if (vendingMachineState == MAIN_MENU) {
+        while (vendingMachineState != EXIT) {
 
-                    UserOutput.displayVendingMachine();
-                    vendingMachineState = UserInput.getMenuOptions();
+            if (vendingMachineState == MAIN_MENU) {
 
-                } else if (vendingMachineState == VENDING_ITEMS) {
+                UserOutput.displayVendingMachine();
+                UserInput.getHomeScreenOption();
 
-
-                } else if (vendingMachineState == PURCHASES_MENU) {
+            } else if (vendingMachineState == VENDING_ITEMS) {
 
 
-                }
+            } else if (vendingMachineState == PURCHASES_MENU) {
+
+
             }
         }
-        public void exit () {
-            UserOutput.exit();
-        }
+
+        exit();
+    }
+
+    public void exit() {
+        UserOutput.exit();
     }
 }

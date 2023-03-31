@@ -2,6 +2,7 @@ package com.techelevator.application;
 
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
+import jdk.tools.jmod.Main;
 
 
 public class MainMenu {
@@ -11,23 +12,25 @@ public class MainMenu {
     public static final int PURCHASES_MENU = 3;
 
     public void run() {
-        int vendingMachineState = MAIN_MENU;
+        int MainMenuState = MAIN_MENU;
 
         {
-            while (vendingMachineState != EXIT) {
+            while (MainMenuState != EXIT) {
 
-                if (vendingMachineState == MAIN_MENU) {
+                if (MainMenuState == MAIN_MENU) {
 
-                    UserOutput.displayVendingMachine();
-                    vendingMachineState = UserInput.getMenuOptions();
+                    UserOutput.displayMainMenu();
+                    MainMenuState = UserInput.getMenuOptions();
 
-                } else if (vendingMachineState == VENDING_ITEMS) {
-
-
-                } else if (vendingMachineState == PURCHASES_MENU) {
+                } else if (MainMenuState == VENDING_ITEMS) {
 
 
                 }
+
+
+                } else if (MainMenuState == PURCHASES_MENU) {
+
+
             }
         }
         public void exit () {

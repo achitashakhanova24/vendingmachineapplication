@@ -4,6 +4,7 @@ import com.techelevator.PurchaseOptions.ItemManager;
 import com.techelevator.PurchaseOptions.moneyManager;
 import com.techelevator.application.MainMenu;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
@@ -32,11 +33,11 @@ public class UserInput
 
         if (option.equals("d"))
         {
-            MainMenu.DISPLAY;
+            MainMenu.VENDING_ITEMS;
         }
         else if (option.equals("p"))
         {
-            MainMenu.PURCHASES;
+            MainMenu.PURCHASES_MENU;
         }
         else if (option.equals("e"))
         {
@@ -52,8 +53,6 @@ public class UserInput
 
         System.out.println("M) Feed Money ");
         System.out.println("S) Select item ");
-        System.out.println("F) Finish transaction ");
-
         System.out.println();
         System.out.print("Please select an option: ");
 
@@ -65,7 +64,7 @@ public class UserInput
             System.out.println("Please enter an amount ");
             String optionPicked = scanner.nextLine();
             String feedMoneyOption = optionPicked.trim().toLowerCase();
-            double amount = Double. parseDouble(feedMoneyOption) ;
+            BigDecimal amount = new BigDecimal(feedMoneyOption) ;
             new moneyManager(amount);
         }
 
@@ -81,5 +80,25 @@ public class UserInput
 
 
     public static int getMenuOptions() {
+    }
+
+    public static String messageForItem
+
+    {
+        if (type.equals("Munchy")) {
+            System.out.println( "Munchy, Munchy, so Good!");
+        }
+        if (type.equals("Candy")) {
+            System.out.println("Sugar, Sugar, so Sweet!");
+        }
+        if (type.equals("Candy")) {
+            System.out.println("Sugar, Sugar, so Sweet!");
+        }
+        if(type.equals("Drink")){
+            System.out.println("Drinky, Drinky, Slurp Slurp!");
+        }
+        if(type.equals("Gum")){
+            System.out.println("Chewy, Chewy, Lots O Bubbles!);
+        }
     }
 }

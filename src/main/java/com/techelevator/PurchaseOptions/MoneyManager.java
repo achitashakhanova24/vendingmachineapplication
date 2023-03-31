@@ -1,13 +1,17 @@
 package com.techelevator.PurchaseOptions;
 
 
+import com.techelevator.ui.UserInput;
+
 import java.math.BigDecimal;
 
 
 public class MoneyManager {
     private BigDecimal amount;
-    private BigDecimal currentMoneyProvided = BigDecimal.ZERO;
+    private BigDecimal currentMoneyProvided;
     private BigDecimal currentBalance;
+
+
 
     public MoneyManager(BigDecimal amount) {
         this.amount = amount;
@@ -16,12 +20,8 @@ public class MoneyManager {
     }
 
     public BigDecimal addCurrentMoneyProvided(BigDecimal amountInserted) {
-        currentMoneyProvided = currentMoneyProvided.add(amountInserted);
-        return currentMoneyProvided;
-    }
 
-    public BigDecimal subtractCurrentMoneyProvided(BigDecimal amountInserted) {
-        currentMoneyProvided = currentMoneyProvided.subtract(amountInserted);
+        currentMoneyProvided = currentMoneyProvided.add(amountInserted);
         return currentMoneyProvided;
     }
 
@@ -37,18 +37,37 @@ public class MoneyManager {
         return currentBalance;
     }
 
-    public String returnChange(BigDecimal balance) {
+    public BigDecimal returnChange() {
+        BigDecimal itemTotal = UserInput.getUserItemTotal();
+        currentMoneyProvided.subtract(itemTotal);
+        return currentMoneyProvided;
+    }
 
-        BigDecimal quarter = new BigDecimal("0.25"); // BigDecimal?
+    public BigDecimal resetVendingMachine() {
+        BigDecimal quarter = new BigDecimal("0.25");
         BigDecimal dime = new BigDecimal("0.10");
         BigDecimal nickel = new BigDecimal("0.05");
         BigDecimal penny = new BigDecimal("0.01");
         BigDecimal dollar = new BigDecimal("1.00");
-//        BigDecimal chenge = new BigDecimal.ZERO
-//        currentMoneyProvided- balance = change;
-        return "0";
+        BigDecimal currentMoneyProvided = this.currentMoneyProvided;
+        while (currentMoneyProvided.compareTo(BigDecimal.ZERO) > 0) {
 
+            if (currentMoneyProvided.compareTo(dollar)> 0) {
+                currentMoneyProvided = currentMoneyProvided.subtract(dollar);
 
+            } else if (currentMoneyProvided.compareTo(BigDecimal.valueOf(0.99)) < 0 && currentMoneyProvided.compareTo(quarter) >= 0) {
+               currentMoneyProvided = currentMoneyProvided.subtract(quarter);
+
+            } else if (currentMoneyProvided.compareTo(quarter) < 0 && currentMoneyProvided.compareTo(dime) >=0) {
+               currentMoneyProvided = currentMoneyProvided.subtract(dime);
+
+            } else if (currentMoneyProvided.compareTo(dime) < 0 && currentMoneyProvided.compareTo(nickel) >= 0) {
+                currentMoneyProvided = currentMoneyProvided.subtract(dime);
+
+            } else if (currentMoneyProvided.compareTo(nickel) < 0 && currentMoneyProvided.compareTo(penny) >= 0) {
+               currentMoneyProvided = currentMoneyProvided.subtract(penny);
+            }
+        }
+        return currentMoneyProvided;
     }
-
 }

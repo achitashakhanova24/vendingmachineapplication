@@ -2,7 +2,6 @@ package com.techelevator.application;
 
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
-import jdk.tools.jmod.Main;
 
 import static com.techelevator.ui.UserOutput.exit;
 
@@ -34,10 +33,12 @@ public class MainMenu {
                             UserInput.getHomeScreenOption();
 
                         } else if (MainMenuState == VENDING_ITEMS) {
+                            //csv
 
 
                         } else if (MainMenuState == PURCHASES_MENU) {
-
+                            UserOutput.displayMainMenu();
+                            UserInput.getHomeScreenOption();
 
                         }
                     }

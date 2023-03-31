@@ -40,4 +40,7 @@ public static void FeedMoney(){
 
     public static void displayMainMenu() {
     }
+
+    public static void displayPurchaseMenu() {
+    }
 }

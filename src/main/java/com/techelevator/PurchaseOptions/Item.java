@@ -6,7 +6,7 @@ public class Item {
 
         private String name;
         private BigDecimal price;
-        private int quantity = 6;
+        private int quantity;
         private String slotNumber;
         private String type;
 
@@ -70,7 +70,6 @@ public class Item {
     public void setType(String type) {
         this.type = type;
     }
-
 
 
 }

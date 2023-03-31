@@ -4,7 +4,12 @@ import com.techelevator.PurchaseOptions.ItemManager;
 import com.techelevator.PurchaseOptions.MoneyManager;
 import com.techelevator.application.MainMenu;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -12,12 +17,10 @@ import java.util.Scanner;
  * 
  * Dependencies: None
  */
-public class UserInput
-{
+public class UserInput {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static String getHomeScreenOption()
-    {
+    public static String getHomeScreenOption() {
         System.out.println("What would you like to do?");
         System.out.println();
 
@@ -31,18 +34,15 @@ public class UserInput
         String selectedOption = scanner.nextLine();
         String option = selectedOption.trim().toLowerCase();
 
-        if (option.equals("d"))
-        {
-        }
-        else if (option.equals("e"))
-        {
-        //     MainMenu.EXIT;
+        if (option.equals("d")) {
+        } else if (option.equals("e")) {
+            //     MainMenu.EXIT;
         }
 
         return "";
     }
 
-    public static String getPurchaseMenuOption(){
+    public static String getPurchaseMenuOption() throws IOException {
         System.out.println("What would you like to do?");
         System.out.println();
 
@@ -54,26 +54,32 @@ public class UserInput
         String selectedOption = scanner.nextLine();
         String option = selectedOption.trim().toLowerCase();
 
-        if (option.equals("M"))
-        {
+        if (option.equals("M")) {
             System.out.println("Please enter an amount ");
             String optionPicked = scanner.nextLine();
             String feedMoneyOption = optionPicked.trim().toLowerCase();
-            BigDecimal amount = new BigDecimal(feedMoneyOption) ;
-           // new MoneyManager(amount);
-         //   double amount = Double. parseDouble(feedMoneyOption) ;//replace to BigDecimal
-         //   new MoneyManager(amount);
+            BigDecimal amount = new BigDecimal(feedMoneyOption);
+            new MoneyManager(amount);
+        } else if (option.equals("S")) {
+            try {
+                FileWriter writer = new FileWriter("Audit.txt");
+
+                // format the current date and time
+                LocalDateTime now = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss a");
+                writer.close();
+
+
+
+            } catch (IOException e) {
+                System.out.println("Error writing purchases to file");
+            }
         }
-
-
-        else if (option.equals("S"))
-        {
-
-        }
-
         return "";
 
     }
+
+
 
 
     public static int getMenuOptions() {

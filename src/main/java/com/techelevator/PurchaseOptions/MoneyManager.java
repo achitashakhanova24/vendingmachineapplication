@@ -20,10 +20,6 @@ public class MoneyManager {
         return currentMoneyProvided;
     }
 
-    public BigDecimal subtractCurrentMoneyProvided(BigDecimal amountInserted) {
-        currentMoneyProvided = currentMoneyProvided.subtract(amountInserted);
-        return currentMoneyProvided;
-    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -37,18 +33,17 @@ public class MoneyManager {
         return currentBalance;
     }
 
-    public String returnChange(BigDecimal balance) {
+    public BigDecimal returnChange(BigDecimal currentMoneyProvided, BigDecimal itemTotal) {
 
         BigDecimal quarter = new BigDecimal("0.25"); // BigDecimal?
         BigDecimal dime = new BigDecimal("0.10");
         BigDecimal nickel = new BigDecimal("0.05");
         BigDecimal penny = new BigDecimal("0.01");
         BigDecimal dollar = new BigDecimal("1.00");
-//        BigDecimal chenge = new BigDecimal.ZERO
-//        currentMoneyProvided- balance = change;
-        return "0";
+       // BigDecimal //currentMoneyProvided = this.currentMoneyProvided;
+        BigDecimal change = currentMoneyProvided.subtract(itemTotal);
+        return change;
 
 
-    }
-
-}
+              }
+          }

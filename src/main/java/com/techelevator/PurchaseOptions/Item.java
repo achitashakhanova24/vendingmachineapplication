@@ -1,6 +1,10 @@
 package com.techelevator.PurchaseOptions;
 
+import com.techelevator.MenuOptions.VendingItems;
+import com.techelevator.ui.UserOutput;
+
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Item {
 
@@ -70,7 +74,9 @@ public class Item {
     public void setType(String type) {
         this.type = type;
     }
-
+    public
+      List<VendingItems> Item;
+     UserOutput.displayItem()
 
 
 }

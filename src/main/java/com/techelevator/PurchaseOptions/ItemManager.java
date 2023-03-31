@@ -8,13 +8,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+//new itemmanager() pass in new item
+//item manager is the one who has control of items and what will be displayed and such
 public class ItemManager {
-    //new itemmanager() pass in new item
-    //item manager is the one who has control of items and what will be displayed and such
+
     private List<VendingItems> items;
 
-    public ItemManager(List<VendingItems> items) {
+    public ItemManager() {
 
         this.items = new ArrayList<>();
     }
@@ -32,6 +32,7 @@ public class ItemManager {
                 String line = scanner.nextLine();
                 String[] lineOfData = line.split(",");
                 //missing something here:
+                System.out.println(lineOfData);
             }
         }
     }

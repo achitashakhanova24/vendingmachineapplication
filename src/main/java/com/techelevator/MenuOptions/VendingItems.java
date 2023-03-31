@@ -17,13 +17,6 @@ import java.math.BigDecimal;
   */
 public class VendingItems {
 
-//List<VendingItems>items;
-//
-//display();
-//private chips, munchies, soda,gum
-//this will display item manager
-
-
     private String items;
     private BigDecimal amount;
     private int slot;
@@ -41,6 +34,7 @@ public class VendingItems {
     }
 
     public BigDecimal getAmount() {
+
         return amount;
     }
 

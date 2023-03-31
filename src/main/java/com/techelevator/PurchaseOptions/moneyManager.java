@@ -45,7 +45,11 @@ public class MoneyManager {
         BigDecimal nickel = new BigDecimal("0.05");
         BigDecimal penny = new BigDecimal("0.01");
         BigDecimal dollar = new BigDecimal("1.00");
+//        BigDecimal chenge = new BigDecimal.ZERO
+//        currentMoneyProvided- balance = change;
         return "0";
+
+
     }
 
 }

@@ -12,13 +12,6 @@ public class MoneyManager {
     private BigDecimal currentBalance;
 
 
-
-    public MoneyManager(BigDecimal amount) {
-        this.amount = amount;
-        this.currentMoneyProvided = BigDecimal.ZERO;
-        this.currentBalance = BigDecimal.ZERO;
-    }
-
     public BigDecimal addCurrentMoneyProvided(BigDecimal amountInserted) {
 
         currentMoneyProvided = currentMoneyProvided.add(amountInserted);
@@ -37,11 +30,12 @@ public class MoneyManager {
         return currentBalance;
     }
 
-    public BigDecimal returnChange() {
-        BigDecimal itemTotal = UserInput.getUserItemTotal();
-        currentMoneyProvided.subtract(itemTotal);
-        return currentMoneyProvided;
-    }
+//    public BigDecimal returnChange() {
+//        BigDecimal itemTotal = UserInput.getUserItemTotal();
+//        currentMoneyProvided.subtract(itemTotal);
+//        return currentMoneyProvided;
+//        return null;
+//    }
 
     public BigDecimal resetVendingMachine() {
         BigDecimal quarter = new BigDecimal("0.25");

@@ -5,21 +5,21 @@ import com.techelevator.ui.UserOutput;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
 
 
-    public void run() {
+    public void run() throws IOException {
         UserInput userInput = new UserInput();
-        String option = UserInput.getMenuOptions();
+         String option = UserInput.getMenuOptions();
         while (!option.equals("e")) {
             UserOutput.displayMainMenu();
-            UserInput.getMenuOptions();
             if (option.equals("d")) {
+
                 File itemFile = new File("C:\\Users\\Student\\workspace\\java-orange-minicapstonemodule1-team1\\catering.csv");
-                    try
-                    {
+                    try {
                         Scanner scanner = new Scanner(itemFile);
                         while (scanner.hasNextLine()) {
                             String line = scanner.nextLine();

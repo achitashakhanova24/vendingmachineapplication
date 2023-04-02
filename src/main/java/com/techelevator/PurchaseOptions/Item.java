@@ -30,8 +30,12 @@ public class Item {
 
         }
 
+    public Item() {
 
-        public String getName() {
+    }
+
+
+    public String getName() {
 
             return name;
         }

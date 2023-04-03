@@ -18,9 +18,11 @@ public class UserOutput {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void displayMainMenu() {
+        System.out.println("-------------------");
         System.out.println("                   ");
         System.out.println(" Welcome! (=✪ᆽ✪=) ");
         System.out.println("                   ");
+        System.out.println("-------------------");
     }
 
     public static void displayPurchaseMenu() throws IOException {

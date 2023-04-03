@@ -1,10 +1,9 @@
 package com.techelevator.ui;
 
-import com.techelevator.PurchaseOptions.ItemManager;
-import com.techelevator.PurchaseOptions.MoneyManager;
+import com.techelevator.Options.ItemManager;
+import com.techelevator.Options.MoneyManager;
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -19,7 +18,7 @@ public class UserOutput {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void displayMainMenu() {
-        System.out.println(" Welcome! ");
+        System.out.println(" Welcome! (=✪ᆽ✪=) ");
     }
 
     public static void displayPurchaseMenu() throws IOException {
@@ -39,13 +38,15 @@ public class UserOutput {
         String optionPurchase = selectOption.trim().toLowerCase();
 
         if (optionPurchase.equals("m")) {
-            System.out.println("Please insert $1, $5, $10, or $20: ");
-            System.out.println("Current money is: " + moneyManager.addMoneyAmount());
+            addAmount();
 
         }
 
         if (optionPurchase.equals("s")) {
+            System.out.println("");
             System.out.print("Welcome!");
+            System.out.println("");
+            System.out.println("");
 
             ItemManager itemManager = new ItemManager();
             itemManager.readreadCsvFile();
@@ -75,15 +76,17 @@ public class UserOutput {
             System.out.println("After a while crocodile! ~~~^,^,^*<");
             System.out.println("Here is your change: ");
             moneyManager.resetVendingMachine();
+
         }
     }
 
-    public static BigDecimal addAmount() {
+    public static void addAmount() {
         MoneyManager moneyManager = new MoneyManager();
         System.out.println("Please insert $1, $5, $10, or $20: ");
         String optionPicked = scanner.nextLine();
-        BigDecimal amountInserted = new BigDecimal(optionPicked);
-        return amountInserted;
+        int amountInserted = Integer.parseInt(optionPicked);
+        moneyManager.addMoneyAmount(amountInserted);
+
     }
 }
 //BOGODO sale if item %2 == 0, 1 dollar off (every second item)

@@ -1,4 +1,4 @@
-package com.techelevator.PurchaseOptions;
+package com.techelevator.Options;
 
 
 import com.techelevator.ui.UserOutput;
@@ -7,40 +7,43 @@ import java.math.BigDecimal;
 
 
 public class MoneyManager {
-    public BigDecimal moneyAmount = BigDecimal.ZERO;
-    public BigDecimal maxAmount = BigDecimal.valueOf(50.0);
+    public BigDecimal moneyAmountTotal = new BigDecimal("0.00");
+    public BigDecimal moneyAmountCurrent = new BigDecimal("0.00");
 
-    public BigDecimal addMoneyAmount() {
-        BigDecimal tenBill = new BigDecimal(10.00);
-        BigDecimal fiveBill = new BigDecimal(5.00);
-        BigDecimal twentyBill = new BigDecimal(20.00);
-        BigDecimal dollarBill = new BigDecimal(1.00);
+    public void addMoneyAmount(int amountGetting) {
+        BigDecimal tenBill = new BigDecimal("10.00");
+        BigDecimal fiveBill = new BigDecimal("5.00");
+        BigDecimal twentyBill = new BigDecimal("20.00");
+        BigDecimal dollarBill = new BigDecimal("1.00");
         UserOutput input = new UserOutput();
+
         try {
-            while (moneyAmount.compareTo(maxAmount) < 0) {
+             BigDecimal maxAmount = new BigDecimal ("50.0");
 
-                if (moneyAmount.compareTo(dollarBill) > 0) {
-                   moneyAmount = moneyAmount.add(input.addAmount());
+            while (moneyAmountTotal.compareTo(maxAmount) < 0) {
 
-                } else if (moneyAmount.compareTo(BigDecimal.valueOf(1.01)) > 0 && moneyAmount.compareTo(fiveBill) <= 0) {
-                    moneyAmount = moneyAmount.add(input.addAmount());
+                if (amountGetting == 1) {
+                   moneyAmountTotal = moneyAmountCurrent.add(dollarBill);
+                    System.out.println("Your current total is : " + moneyAmountTotal);
+                } else if (amountGetting == 5) {
+                    moneyAmountTotal = moneyAmountTotal.add(fiveBill);
+                    System.out.println("Your current total is : " + moneyAmountTotal);
+                } else if (amountGetting == 10) {
+                    moneyAmountTotal = moneyAmountTotal.add(tenBill);
+                    System.out.println("Your current total is : " +  moneyAmountTotal);
+                } else if (amountGetting == 20) {
+                    moneyAmountTotal = moneyAmountTotal.add(twentyBill);
+                    System.out.println("Your current total is : " + moneyAmountTotal);
 
-                } else if (moneyAmount.compareTo(BigDecimal.valueOf(5.01)) > 0 && moneyAmount.compareTo(tenBill) <= 0) {
-                    moneyAmount = moneyAmount.add(input.addAmount());
-
-                } else if (moneyAmount.compareTo(BigDecimal.valueOf(10.01)) > 0 && moneyAmount.compareTo(twentyBill) <= 0) {
-                    moneyAmount = moneyAmount.add(input.addAmount());
-
-
-                } else if (moneyAmount.compareTo(maxAmount) > 0) {
+                } else {
                     System.out.println("Maximum money entered. >:( ");
                 }
+                moneyAmountCurrent = moneyAmountTotal;
+                break;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return moneyAmount;
     }
 
         public BigDecimal resetVendingMachine () {
@@ -48,7 +51,7 @@ public class MoneyManager {
             BigDecimal dime = new BigDecimal("0.10");
             BigDecimal nickel = new BigDecimal("0.05");
             BigDecimal dollar = new BigDecimal("1.00");
-            BigDecimal moneyAmount = this.moneyAmount;
+            BigDecimal moneyAmount = this.moneyAmountTotal;
             int dollarCounter = 0;
             int quarterCounter = 0;
             int dimeCounter = 0;

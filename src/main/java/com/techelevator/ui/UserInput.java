@@ -2,7 +2,10 @@ package com.techelevator.ui;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.util.Scanner;
+
+import static java.lang.System.exit;
 
 /**
  * Responsibilities: This class should handle receiving ALL input from the User
@@ -31,7 +34,7 @@ public class UserInput {
 
         } else {
             System.out.println("See you later alligator! >*^,^,^~~~");
-            return "";
+            return "e";
         }
 
     }

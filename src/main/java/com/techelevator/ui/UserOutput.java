@@ -1,11 +1,16 @@
 package com.techelevator.ui;
 
-import com.techelevator.PurchaseOptions.MoneyManager;
+//import com.techelevator.PurchaseOptions.MoneyManager;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.Map;
+import com.techelevator.Options.ItemManager;
+import com.techelevator.Options.MoneyManager;
+
+import java.io.*;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 
@@ -19,73 +24,79 @@ public class UserOutput {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void displayMainMenu() {
-        System.out.println(" Welcome! ");
+        System.out.println("-------------------");
+        System.out.println("                   ");
+        System.out.println(" Welcome! (=✪ᆽ✪=) ");
+        System.out.println("                   ");
+        System.out.println("-------------------");
     }
 
-    public static void displayPurchaseMenu() {
+    public static void displayPurchaseMenu() throws IOException {
         MoneyManager moneyManager = new MoneyManager();
-        System.out.println("What would you like to do?");
+        UserInput input = new UserInput();
+
+        System.out.println("What would you like to do? ");
         System.out.println();
 
         System.out.println("M) Feed Money");
         System.out.println("S) Select Item");
+        System.out.println("F) Finish Transaction");
 
         System.out.println();
         System.out.print("Please select an option: ");
-        String selectedOption = scanner.nextLine();
-        String option = selectedOption.trim().toLowerCase();
+        String selectOption = scanner.nextLine();
+        String optionPurchase = selectOption.trim().toLowerCase();
 
-        if (option.equals("m")) {
-            System.out.println("Please enter an amount ");
-            String optionPicked = scanner.nextLine();
-            BigDecimal feedMoney = BigDecimal.valueOf(Long.parseLong(optionPicked));
-            moneyManager.addCurrentMoneyProvided(feedMoney);
+        if (optionPurchase.equals("m")) {
+            addAmount();
 
-            System.out.println("Current Money provided: $" + moneyManager.getCurrentMoneyProvided());
-        } else if (option.equals("s")){
-            System.out.println("Please enter the item ID: ");
-            String itemId= scanner.nextLine();
+        }
+
+        if (optionPurchase.equals("s")) {
+            System.out.println("");
+            System.out.print("Welcome!");
+            System.out.println("");
+            System.out.println("");
+
+            ItemManager itemManager = new ItemManager();
+            itemManager.readreadCsvFile();
+            System.out.print("Please make your selection: ");
+            String pickedOption = scanner.nextLine();
+            String selection = pickedOption.trim().toLowerCase();
+            if (selection.contains("munchy")) {
+                System.out.println(selection + " dispensed! ʕ •ᴥ•ʔ <" +"Munchy, Munchy, so Good!");
+            }
+            if (selection.contains("candy")) {
+                System.out.println(selection + " dispensed! ʕ •ᴥ•ʔ <" +"Sugar, Sugar, so Sweet!");
+            }
+            if (selection.contains("drink")) {
+                System.out.println(selection + " dispensed! ʕ •ᴥ•ʔ <" +"Drinky, Drinky, Slurp Slurp!");
+            }
+            if (selection.contains("gum")) {
+                System.out.println( selection + " dispensed! ʕ •ᴥ•ʔ <" + "Chewy, Chewy, Lots O Bubbles!");
+            }
+
+            try (PrintWriter fileWriter = new PrintWriter("C:\\Users\\Student\\workspace\\java-orange-minicapstonemodule1-team1\\Audit.txt")) {
+                LocalDateTime now = LocalDateTime.now();
+                fileWriter.println(now + " " + selection);
+            }
+
+        }
+        if (optionPurchase.equals("f")) {
+            System.out.println("After a while crocodile! ~~~^,^,^*<");
+            System.out.println("Here is your change: ");
+            moneyManager.resetVendingMachine();
+
         }
     }
+
+    public static void addAmount() {
+        MoneyManager moneyManager = new MoneyManager();
+        System.out.println("Please insert $1, $5, $10, or $20: ");
+        String optionPicked = scanner.nextLine();
+        int amountInserted = Integer.parseInt(optionPicked);
+        moneyManager.addMoneyAmount(amountInserted);
+
+    }
 }
-
-//        }
-//        if (option.equals("s")) {
-//            System.out.println("Please select an item: ");
-//            System.out.println("1) Munchy ($1.50");
-//            System.out.println("Enter the item number: ");
-//
-//            String selectedItemId = scanner.nextLine();
-//            String itemId = selectedItemId.trim();
-//
-//
-//            try {
-//                File file = new File("C:\\Users\\Student\\workspace\\java-orange-minicapstonemodule1-team1\\catering.csv");
-//               Scanner  fileScanner = new Scanner(file);
-//
-//                while (fileScanner.hasNextLine()) ;
-//                String line = fileScanner.nextLine();
-//                System.out.println(line);
-//
-
-//                if (line[0].equals(itemId)) {
-//                    BigDecimal itemPrice = new BigDecimal(line[2]);
-//                    if (moneyManager.getCurrentMoneyProvided().compareTo(itemPrice) < 0) {
-//                        System.out.println("Sorry, you're broke. lol");
-//                    } else {
-//                        MoneyManager managerOfMoney = new MoneyManager();
-//                        String priceOfItem = scanner.nextLine();
-//                        BigDecimal moneyFeed = BigDecimal.valueOf(Long.parseLong(priceOfItem));
-//                        managerOfMoney.addCurrentMoneyProvided(moneyFeed);
-//
-//                   //     managerOfMoney.subtractCurrentMoneyProvided(moneyFeed);
-//                    //    System.out.println("Thank you for your purchase.");
-//                    }
-//                }
-//                fileScanner.close();
-//            } catch (FileNotFoundException e) {
-//
-//            }
-//        }
-//    }
-//}
+//BOGODO sale if item %2 == 0, 1 dollar off (every second item)

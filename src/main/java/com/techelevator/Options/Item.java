@@ -1,4 +1,4 @@
-package com.techelevator.PurchaseOptions;
+package com.techelevator.Options;
 
 import com.techelevator.MenuOptions.VendingItems;
 import com.techelevator.ui.UserOutput;
@@ -30,6 +30,7 @@ public class Item {
             this.slotNumber = slotNumber;
             this.type = type;
 
+            this.quantity = 5;
         }
 
         public String getName() {
@@ -57,20 +58,18 @@ public class Item {
         public int getQuantity() {
 
             return quantity;
-        }
-
-        public void setQuantity(int quantity) {
-
-            this.quantity = quantity;
-        }
-
-    public void setSlotNumber(String slotNumber) {
-        this.slotNumber = slotNumber;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    @Override
+    public String toString(){
+        if (quantity < 1) {
+            return slotNumber + ": " + name + "SOLD OUT";
+        }
+        return slotNumber + ": " + name + " - " + getPrice() + " - " + quantity + " remaining";
     }
 
+    public void inventoryDecrement() {
+       quantity --;
+    }
 }
 

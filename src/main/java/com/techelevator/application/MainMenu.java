@@ -2,48 +2,39 @@ package com.techelevator.application;
 
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
-import jdk.tools.jmod.Main;
 
-import static com.techelevator.ui.UserOutput.exit;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class MainMenu {
-    public static final int MAIN_MENU = 0;
-    public static final int EXIT = 1;
-    public static final int VENDING_ITEMS = 2;
-    public static final int PURCHASES_MENU = 3;
+
 
     public void run() {
-        int MainMenuState = MAIN_MENU;
-
-        {
-            while (MainMenuState != EXIT) {
-
-                if (MainMenuState == MAIN_MENU) {
-
-                    UserOutput.displayMainMenu();
-                    MainMenuState = UserInput.getMenuOptions();
-
-                } else if (MainMenuState == VENDING_ITEMS) {
-
-                    while (MainMenuState != EXIT) {
-
-                        if (MainMenuState == MAIN_MENU) {
-
-                            UserOutput.displayMainMenu();
-                            UserInput.getHomeScreenOption();
-
-                        } else if (MainMenuState == VENDING_ITEMS) {
-
-
-                        } else if (MainMenuState == PURCHASES_MENU) {
-
-
-                        }
+        UserInput userInput = new UserInput();
+        String option = UserInput.getMenuOptions();
+        while (!option.equals("e")) {
+            UserOutput.displayMainMenu();
+            UserInput.getMenuOptions();
+            if (option.equals("d")) {
+                File itemFile = new File("C:\\Users\\Student\\workspace\\java-orange-minicapstonemodule1-team1\\catering.csv");
+                try
+                {
+                    Scanner scanner = new Scanner(itemFile);
+                    while (scanner.hasNextLine()) {
+                        String line = scanner.nextLine();
+                        System.out.println(line);
                     }
+                } catch(
+                        FileNotFoundException e)
 
-                    exit();
+                {
+                    e.printStackTrace();
                 }
+
+            }
+            if (option.equals ("p")){
+                UserOutput.displayPurchaseMenu();
             }
         }
     }

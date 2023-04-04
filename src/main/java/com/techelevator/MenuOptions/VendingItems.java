@@ -1,20 +1,8 @@
 package com.techelevator.MenuOptions;
 
-//TODO: inventory of items, loads initial stock (6), updates quantity as sold, method to list items and details
-
-import java.io.File;
-import java.util.Scanner;
-
 import java.math.BigDecimal;
+import java.util.List;
 
-/* TODO :
- - Scanner for the file reading
- - List of all items and prices
- - What items are in stock/out of stock
- - Slot capacity (6)
- -Message that indicates the item is no longer available
- -display item manager read the csv
-  */
 public class VendingItems {
 
     private String items;

@@ -10,7 +10,7 @@ public class Item {
 
         private String name;
         private BigDecimal price;
-        private int quantity = 6;
+        private int quantity;
         private String slotNumber;
         private String type;
 
@@ -24,8 +24,6 @@ public class Item {
             this.type = type;
         }
 
-
-
         public Item(String name, BigDecimal price, int quantity, String slotNumber, String type) {
             this.name = name;
             this.price = price;
@@ -33,7 +31,6 @@ public class Item {
             this.type = type;
 
         }
-
 
         public String getName() {
 
@@ -74,10 +71,6 @@ public class Item {
     public void setType(String type) {
         this.type = type;
     }
-    public
-      List<VendingItems> Item;
-     UserOutput.displayItem()
-
 
 }
 

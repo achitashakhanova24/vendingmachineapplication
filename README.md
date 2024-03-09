@@ -24,7 +24,7 @@ The Java Vending Machine application provides a user-friendly simulation of a ve
 `java
 UserOutput.displayMainMenu();
 UserOutput.displayPurchaseMenu();
-UserOutput.addAmount();
+UserOutput.addAmount();`
 
 ### ItemManager Class 
 The `ItemManager` class plays a crucial role in managing and providing details about items available in the vending machine. It is responsible for reading item details from a CSV file and offering information for item selection.
@@ -35,7 +35,7 @@ To utilize the `ItemManager` class, instantiate an object and use the `readCsvFi
 
 `java
 ItemManager itemManager = new ItemManager();
-itemManager.readCsvFile();
+itemManager.readCsvFile();`
 
 ## Technologies Used
 

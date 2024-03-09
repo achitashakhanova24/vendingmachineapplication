@@ -26,8 +26,7 @@ UserOutput.displayMainMenu();
 UserOutput.displayPurchaseMenu();
 UserOutput.addAmount();
 
-## ItemManager Class
-
+### ItemManager Class 
 The `ItemManager` class plays a crucial role in managing and providing details about items available in the vending machine. It is responsible for reading item details from a CSV file and offering information for item selection.
 
 ### Usage

@@ -19,8 +19,7 @@ The Java Vending Machine application provides a user-friendly simulation of a ve
 - **Finish Transaction (Option F):** Complete the transaction and receive change.
 
 ### UserOutput Class
-
-The `UserOutput` class manages the display of user interface elements, including the main menu and purchase menu.
+- **The `UserOutput` class manages the display of user interface elements, including the main menu and purchase menu.
 
 ```java
 UserOutput.displayMainMenu();
